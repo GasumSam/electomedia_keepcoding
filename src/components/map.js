@@ -110,9 +110,10 @@ const SpainMap = ({
       .append("path")
       .attr("d", path)
       //.attr("fill", (d, i) => fillColor(popupData[i].PSOE)) // Declaración de la variable number
-      .attr("fill", (d, i) => {if((popupData[i].PSOE) > (popupData[i].PP)){return "#ff9f9f"}
-      else if((popupData[i].PSOE) < (popupData[i].PP)){return "#78b5b8"}
-      else if((popupData[i].ERC) > (popupData[i].PSOE)){return "#ffe49e"}
+      .attr("fill", (d, i) => {if((popupData[i].ERC) > (popupData[i].PSOE)){return "#ffe49e"}
+      else if((popupData[i].PNV) = 3){return "#2D572C"}
+      else if((popupData[i].PSOE) < (popupData[i].PP)){return "#0070B8"}
+      else if((popupData[i].PSOE) > (popupData[i].PP)){return "#C81D11}
       else if((popupData[i].VOX) > (popupData[i].PP)){return "#c0dec7"}  
       else if((popupData[i].PSOE) = (popupData[i].PP)){return "#dedec5"}
       else if((popupData[i].ERC = popupData[i].PSOE) && (popupData[i].PSOE > popupData[i].PP)){return "#dedec5"}
