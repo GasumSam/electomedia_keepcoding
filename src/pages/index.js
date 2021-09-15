@@ -73,10 +73,12 @@ export default props => {
       
       <div className="container">
       <div id="faqss">
-            <div><h5>Candidaturas más votadas por provincia</h5></div>
-            <div id="psoe">PSOE</div>
-            <div id="pp">PP</div>
-            <div id="empate">Empate entre dos o más candidaturas</div>
+            <div id="candi_back"><div className="candi">Candidaturas más votadas:</div></div>
+            <div id="psoe_back"><div className="psoe">PSOE</div></div>
+            <div id="pp_back"><div className="pp">PP</div></div>
+            <div id="erc_back"><div className="erc">ERC</div></div>
+            <div id="pnv_back"><div className="pnv">PNV</div></div>
+            <div id="empate_back"><div className="empate">Empate</div></div>
           </div>
         <div className="dummy-link" id="tables-link">
 

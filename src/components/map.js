@@ -8,8 +8,8 @@ const Popup = props => {
       id="popup"
       style={{
         display: props.visibility ? "block" : "none",
-        left: 1200 + "px",
-        top: 350 + "px",
+        left: props.left + "px",
+        top: props.top + "px",
       }}
     >
       <h6>{props.PROVINCIA}</h6> 
@@ -56,26 +56,6 @@ const SpainMap = ({
    }) => {
   const svgRef = useRef(null)
   let ratio = 0
-      /*
-  const fillColor = number => {
-      if (number > 0) {
-        //if (number < 50) {
-          return "#ff9f9f"
-          }
-    }
-  
-
-
-
-    if ( data.PP > 25 & data.PSOE <= 35) {
-      //if (number < 50) {
-        return "#c0dec7"
-      }
-    if (data.PP > 2) {
-      //if (number < 50) {
-        return "#ccdfff"
-      }
-   */
 
   const createThePlot = () => {
     const w = width
@@ -110,13 +90,28 @@ const SpainMap = ({
       .append("path")
       .attr("d", path)
       //.attr("fill", (d, i) => fillColor(popupData[i].PSOE)) // Declaración de la variable number
-      .attr("fill", (d, i) => {if((popupData[i].PSOE) > (popupData[i].PP)){return "#ff9f9f"}
+      .attr("fill", (d, i) => { 
+        if((popupData[i].PROVINCIA) == "Girona"){return "#dedec5"}
+        if((popupData[i].PROVINCIA) == "Gipuzkoa"){return "#dedec5"}
+        if((popupData[i].PROVINCIA) == "Tarragona"){return "#dedec5"}
+        if((popupData[i].PROVINCIA) == "Álava"){return "#dedec5"}
+        if((popupData[i].ERC) > (popupData[i].PSOE) && (popupData[i].ERC) > (popupData[i].JxC)){return "#ffb41a"}
+        if((popupData[i].PNV) > (popupData[i].BILD)){return "#008041"}
+        if((popupData[i].PSOE) > (popupData[i].PP)){return "#c81d11"}
+        if((popupData[i].PP) > (popupData[i].PSOE)){return "#3b83bd"}
+        if((popupData[i].PP) = (popupData[i].PSOE)){return "#dedec5"}
+
+
+
+        
+      /*
+        if((popupData[i].PSOE) > (popupData[i].PP)){return "#ff9f9f"}
       else if((popupData[i].PSOE) < (popupData[i].PP)){return "#78b5b8"}
       else if((popupData[i].ERC) > (popupData[i].PSOE)){return "#ffe49e"}
       else if((popupData[i].VOX) > (popupData[i].PP)){return "#c0dec7"}  
       else if((popupData[i].PSOE) = (popupData[i].PP)){return "#dedec5"}
       else if((popupData[i].ERC = popupData[i].PSOE) && (popupData[i].PSOE > popupData[i].PP)){return "#dedec5"}
-      else if((popupData[i].ERC) = (popupData[i].JxC)){return "#dedec5"}
+      else if((popupData[i].ERC) = (popupData[i].JxC)){return "#dedec5"}   */
 
     })  
       .attr("stroke", "#444")
@@ -185,42 +180,6 @@ const SpainMap = ({
         mouseLeaveHandler()
 
       })
-/*
-    svg
-      .selectAll("append")
-      .data(popupData)
-      .enter()
-      .append("circle")
-      .attr('cx', 250)
-      .attr('cy', 700)
-      .attr('r', 25)
-      .attr("stroke", "#444")
-      .attr("stroke-width", "0.35")
-      .attr('fill', '#ff9f9f')
-
-    svg
-      .selectAll("append")
-      .data(popupData)
-      .enter()
-      .append("circle")
-      .attr('cx', 450)
-      .attr('cy', 700)
-      .attr('r', 25)
-      .attr("stroke", "#444")
-      .attr("stroke-width", "0.35")
-      .attr('fill', '#78b5b8')
-
-    svg
-      .selectAll("append")
-      .data(popupData)
-      .enter()
-      .append("circle")
-      .attr('cx', 650)
-      .attr('cy', 700)
-      .attr('r', 25)
-      .attr("stroke", "#444")
-      .attr("stroke-width", "0.35")
-      .attr('fill', '#dedec5')*/
   }
 
   useEffect(() => {
