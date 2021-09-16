@@ -213,6 +213,7 @@ module.exports = {
         <li>since:</li>
         <ul>2019-10-15 until:2019-11-11'</ul>
         </ol>
+        <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/eesquivias/proyecto_electomedia/tree/main/otras_fuentes/twitter-s3">Preprocesamiento en Twitter</a></p>
         <p>Finalmente analizamos a modo de ejemplo los datos de Abril de 2019. 
         Los notebooks están en el github numerados y los datasets globales en el bucket correspondiente de S3.</p>                `,
       },
